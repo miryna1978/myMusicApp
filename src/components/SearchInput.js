@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function SearchInput(props) {
   return (
-    <section className="mb-10">
+    <section className="flex mb-10">
       <input
         onChange={props.onInputChange}
-        className="bg-gray-700 w-1/3 p-2 rounded-l-lg focus:outline-none"
+        className="bg-gray-700 md:w-1/3 w-full p-2 rounded-l-lg focus:outline-none"
         placeholder="探したい曲を入力してください"
       />
       <button

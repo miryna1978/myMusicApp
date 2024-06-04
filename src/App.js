@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { SongList } from "./components/SongList";
 import spotify from "./lib/spotify";
 import { Player } from "./components/Player";
-import { SearchInput } from "./SearchInput";
+import { SearchInput } from "./components/SearchInput";
 import { Pagination } from "./components/Pagination";
 
 const limit = 20;

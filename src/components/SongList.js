@@ -10,21 +10,31 @@ export function SongList(props) {
     );
 
   return (
-    <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
       {props.songs.map((song) => {
         return (
           <div
-            onClick={() => props.onSongSelected(song)}
             key={song.id}
-            className="flex-none cursor-pointer "
+            className='flex-none'
           >
-            <img
-              alt="thumbnail"
-              src={song.album.images[0].url}
-              className="mb-2 rounded"
-            />
-            <h3 className="text-lg font-semibold">{song.name}</h3>
-            <p className="text-gray-400">By {song.artists[0].name}</p>
+            <div
+              onClick={() => props.onSongSelected(song)}
+              className="cursor-pointer"
+            >
+              <img
+                alt="thumbnail"
+                src={song.album.images[0].url}
+                className="mb-2 rounded"
+              />
+            </div>
+            <h3 className="text-lg font-semibold">
+              <a href={song.external_urls.spotify} target='_blank' rel='noreferrer'>
+                {song.name}
+              </a>
+            </h3>
+            <p className="text-gray-400">
+              By <a href={song.artists[0].external_urls.spotify} target='_blank' rel='noreferrer'>{song.artists[0].name}</a>
+            </p>
           </div>
         );
       })}
