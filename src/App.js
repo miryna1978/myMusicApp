@@ -5,6 +5,7 @@ import { Player } from "./components/Player";
 import { SearchInput } from "./components/SearchInput";
 import { Pagination } from "./components/Pagination";
 
+const playlistId = '2UNvdeR4426Xlt53FXNWSy';
 const limit = 20;
 export default function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +26,7 @@ export default function App() {
 
   const fetchPopularSongs = async () => {
     setIsLoading(true);
-    const result = await spotify.getPopularSongs();
+    const result = await spotify.getPopularSongs(playlistId);
     const popularSongs = result.items.map((item) => {
       return item.track;
     })

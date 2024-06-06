@@ -20,8 +20,8 @@ class SpotifyClient {
     return spotify;
   }
 
-  async getPopularSongs() {
-    const response = await axios.get('https://api.spotify.com/v1/playlists/7EJs5MJDNV0byeqXuvWza0/tracks', {
+  async getPopularSongs(id) {
+    const response = await axios.get(`https://api.spotify.com/v1/playlists/${id}/tracks`, {
       headers: { Authorization: "Bearer " + this.token },
     });
     console.log(response);
